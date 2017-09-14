@@ -54,7 +54,9 @@ export class SearchPage {
    */
   public createEvent(): void {
     console.log('budget!: ', this.budget)
-    this.calendar.createCalendar('MyCalendar')
+    const startDate = new Date(2017,9,14,0,0,0,0);
+    const endDate = new Date(2017,9,16,0,0,0,0);
+    this.calendar.createEvent('testing title', 'location', 'notes go here', startDate, endDate)
       .then((msg) => {
          console.log(msg);
         },
