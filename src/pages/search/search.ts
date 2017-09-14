@@ -53,10 +53,10 @@ export class SearchPage {
    * Navigate to the detail page for this item.
    */
   public createEvent(): void {
-    console.log('budget: ', this.budget)
+    console.log('budget!: ', this.budget)
     this.calendar.createCalendar('MyCalendar')
       .then((msg) => {
-         console.log(msg); 
+         console.log(msg);
         },
         (err) => {
           console.log(err);
