@@ -19,4 +19,14 @@
       <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
     </button>
   </ion-list>
+
+  <ion-item>
+      <ion-label fixed>{{ 'TIMEFRAME' | translate }}</ion-label>
+      <ion-input [(ngModel)]="timeFrame" name="timeFrame"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label fixed>{{ 'BUDGET' | translate }}</ion-label>
+      <ion-input [(ngModel)]="budget" name="budget"></ion-input>
+  </ion-item>
 </ion-content>

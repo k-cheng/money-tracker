@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 
@@ -12,6 +13,9 @@ import { Items } from '../../providers/providers';
 export class SearchPage {
 
   currentItems: any = [];
+
+  timeFrame: string;
+  budget: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public items: Items) { }
 
