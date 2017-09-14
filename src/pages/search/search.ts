@@ -59,9 +59,11 @@ export class SearchPage {
     this.calendar.createEvent('testing title', 'location', 'notes go here', startDate, endDate)
       .then((msg) => {
          console.log(msg);
+         alert(msg);
         },
         (err) => {
           console.log(err);
+          alert(err);
       });
   }
 
