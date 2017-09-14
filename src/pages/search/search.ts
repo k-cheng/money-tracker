@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
 
 
@@ -23,6 +23,7 @@ export class SearchPage {
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public items: Items,
+    public alertCtrl: AlertController,
     private calendar: Calendar
   ) { }
 
@@ -49,8 +50,17 @@ export class SearchPage {
     });
   }
 
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Purchase made!',
+      subTitle: 'Bro, stop wasting money!',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
   /**
-   * Navigate to the detail page for this item.
+   * Create an event.
    */
   public createEvent(): void {
     console.log('budget!: ', this.budget)
@@ -59,11 +69,11 @@ export class SearchPage {
     this.calendar.createEvent('testing title', 'location', 'notes go here', startDate, endDate)
       .then((msg) => {
          console.log(msg);
-         alert(msg);
+         this.showAlert();
         },
         (err) => {
           console.log(err);
-          alert(err);
+          this.showAlert();
       });
   }
 
